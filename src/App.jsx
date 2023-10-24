@@ -10,6 +10,7 @@ import { RadioButton } from './SiteSections/RadioButton';
 import { Name } from './SiteSections/Name';
 import { Buttons } from './SiteSections/Buttons';
 import { Minions } from './SiteSections/Minions';
+import { Story } from './SiteSections/Story';
 
 export const App = () => {
   const [section, setSection] = useState(0);
@@ -49,6 +50,7 @@ export const App = () => {
         />
       )}
       {section === 5 && <Pronouns state={state} setState={setState} />}
+      {section === 6 && <Story state={state} />}
       <Buttons
         section={section}
         setSection={setSection}
