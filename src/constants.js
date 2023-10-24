@@ -8,8 +8,8 @@ export const siteSections = [
     property: 'petName',
   },
   {
-    header: 'How many minions do you want to have?',
-    property: 'minion',
+    header: 'Choose a number',
+    property: 'minions',
   },
   {
     header: 'Which programming language do you want to learn?',
@@ -125,12 +125,6 @@ const numberToWords = [
 
 const capitalize = wordToCapitalize =>
   wordToCapitalize.charAt(0).toUpperCase() + wordToCapitalize.slice(1);
-
-const pronouns = {
-  he: ['he', 'him', 'his', 'boy'],
-  she: ['she', 'her', 'her', 'girl'],
-  they: ['they', 'them', 'their', 'child'],
-};
 
 const getPronoun = (type, pronoun) => {
   const pronounMap = {

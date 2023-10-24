@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 
 export const RadioButton = ({ state, setState, options, propToChange }) => {
   return (
-    <div>
+    <div className="radio-button">
       {options.map(option => (
         <p key={option.value}>
           <label>
