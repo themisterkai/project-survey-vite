@@ -4,12 +4,14 @@ import {
   siteSections,
   petOptions,
   programmingOptions,
+  pronounOptions,
 } from './constants';
-import { Pronouns } from './SiteSections/Pronouns';
+import { Dropdown } from './SiteSections/Dropdown';
 import { RadioButton } from './SiteSections/RadioButton';
 import { Name } from './SiteSections/Name';
 import { Buttons } from './SiteSections/Buttons';
-import { Minions } from './SiteSections/Minions';
+import { Range } from './SiteSections/Range';
+import { Story } from './SiteSections/Story';
 
 export const App = () => {
   const [section, setSection] = useState(0);
@@ -22,7 +24,7 @@ export const App = () => {
           state={state}
           setState={setState}
           options={petOptions}
-          propToChange={'pet'}
+          propToChange={siteSections[section].property}
         />
       )}
       {section === 1 && (
@@ -32,13 +34,21 @@ export const App = () => {
           propToChange={siteSections[section].property}
         />
       )}
-      {section === 2 && <Minions state={state} setState={setState} />}
+      {section === 2 && (
+        <Range
+          state={state}
+          setState={setState}
+          min={3}
+          max={20}
+          propToChange={siteSections[section].property}
+        />
+      )}
       {section === 3 && (
         <RadioButton
           state={state}
           setState={setState}
           options={programmingOptions}
-          propToChange={'programmingLanguage'}
+          propToChange={siteSections[section].property}
         />
       )}
       {section === 4 && (
@@ -48,7 +58,15 @@ export const App = () => {
           propToChange={siteSections[section].property}
         />
       )}
-      {section === 5 && <Pronouns state={state} setState={setState} />}
+      {section === 5 && (
+        <Dropdown
+          state={state}
+          setState={setState}
+          options={pronounOptions}
+          propToChange={siteSections[section].property}
+        />
+      )}
+      {section === 6 && <Story state={state} />}
       <Buttons
         section={section}
         setSection={setSection}
