@@ -161,8 +161,8 @@ export const generateStory = ({
   name,
 }) => {
   const numOfMinions = numberToWords[minions];
-  name = capitalize(name);
-  petName = capitalize(petName);
+  name = capitalize(name.toLowerCase());
+  petName = capitalize(petName.toLowerCase());
 
   return `Once upon a tremendous time, in a tremendous village, there lived an amazing 
   ${getPronoun(

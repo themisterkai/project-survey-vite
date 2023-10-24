@@ -8,7 +8,7 @@ import {
 } from './constants';
 import { Dropdown } from './SiteSections/Dropdown';
 import { RadioButton } from './SiteSections/RadioButton';
-import { Name } from './SiteSections/Name';
+import { Input } from './SiteSections/Input';
 import { Buttons } from './SiteSections/Buttons';
 import { Range } from './SiteSections/Range';
 import { Story } from './SiteSections/Story';
@@ -28,10 +28,12 @@ export const App = () => {
         />
       )}
       {section === 1 && (
-        <Name
+        <Input
           state={state}
           setState={setState}
           propToChange={siteSections[section].property}
+          section={section}
+          setSection={setSection}
         />
       )}
       {section === 2 && (
@@ -52,10 +54,12 @@ export const App = () => {
         />
       )}
       {section === 4 && (
-        <Name
+        <Input
           state={state}
           setState={setState}
           propToChange={siteSections[section].property}
+          section={section}
+          setSection={setSection}
         />
       )}
       {section === 5 && (
