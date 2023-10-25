@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 
 export const Dropdown = ({ state, setState, options, propToChange }) => {
   return (
-    <div>
+    <div className="dropdown">
       <select
         value={state[propToChange]}
         onChange={e => setState({ ...state, [propToChange]: e.target.value })}

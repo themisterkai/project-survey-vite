@@ -2,15 +2,17 @@ import { PropTypes } from 'prop-types';
 
 export const Range = ({ state, setState, min, max, propToChange }) => {
   return (
-    <div>
-      <div className="range">{state.minions}</div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        onChange={e => setState({ ...state, [propToChange]: e.target.value })}
-        value={state[propToChange]}
-      ></input>
+    <div className="range">
+      <div>{state[propToChange]}</div>
+      <div>
+        <input
+          type="range"
+          min={min}
+          max={max}
+          onChange={e => setState({ ...state, [propToChange]: e.target.value })}
+          value={state[propToChange]}
+        ></input>
+      </div>
     </div>
   );
 };

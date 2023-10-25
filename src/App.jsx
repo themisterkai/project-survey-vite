@@ -36,7 +36,7 @@ export const App = () => {
     }
   };
   return (
-    <div>
+    <div className="main-container">
       <Header text={siteSections[section].header} />
       {section === 0 && (
         <RadioButton
