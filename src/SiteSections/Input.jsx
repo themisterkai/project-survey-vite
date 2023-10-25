@@ -20,7 +20,10 @@ export const Input = ({
       <input
         onKeyUp={handleKeyUp}
         onChange={e =>
-          setState({ ...state, [propToChange]: e.target.value.trimStart() })
+          setState({
+            ...state,
+            [propToChange]: e.target.value.trimStart().toLowerCase(),
+          })
         }
         value={state[propToChange]}
         maxLength={maxLength}
