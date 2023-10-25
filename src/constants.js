@@ -203,7 +203,7 @@ export const generateStory = ({
   } a winner, and with ${petName} by ${getPronoun('his', pronoun)} side and
   ${numOfMinions} minions at their disposal, they jumped into it.
   <p/>
-  They started small, you know, making ${petName}' virtual mouse run around on the screen. ${name}
+  They started small, you know, making ${petName}'s virtual mouse run around on the screen. ${name}
   was typing away, like a champ, with ${petName} right there, giving ${getPronoun(
     'him',
     pronoun
