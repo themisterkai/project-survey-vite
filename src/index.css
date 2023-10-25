@@ -20,11 +20,13 @@ code {
 body {
   background-image: url('bg-night-city.jpg');
   background-repeat: repeat-x;
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
   background-color: black;
+  font-family: 'thaleahfat';
+  font-size: 40px;
+  color: white;
+}
+
+.header {
   font-family: 'thaleahfat';
   font-size: 80px;
   color: white;
