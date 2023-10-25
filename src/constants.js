@@ -1,10 +1,10 @@
 export const siteSections = [
   {
-    header: 'What kind of pet do you want to have?',
+    header: 'Choose an animal',
     property: 'pet',
   },
   {
-    header: 'Choose a name for your pet',
+    header: 'What should we call your new pet?',
     property: 'petName',
   },
   {
