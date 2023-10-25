@@ -36,6 +36,7 @@ export const initialState = {
   programmingLanguage: '',
   pronoun: '',
   name: '',
+  error: '',
 };
 
 export const pronounOptions = [

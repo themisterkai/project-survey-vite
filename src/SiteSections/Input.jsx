@@ -6,18 +6,23 @@ export const Input = ({
   propToChange,
   section,
   setSection,
+  validate,
+  maxLength = 15,
 }) => {
-  const handleKeyDown = event => {
-    if (event.key === 'Enter') {
+  const handleKeyUp = e => {
+    validate(e.target.value);
+    if (e.key === 'Enter' && state.error === '') {
       setSection(section + 1);
     }
   };
   return (
     <div className="input">
       <input
-        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
         onChange={e => setState({ ...state, [propToChange]: e.target.value })}
         value={state[propToChange]}
+        maxLength={maxLength}
+        autoComplete="off"
       ></input>
     </div>
   );
@@ -29,4 +34,6 @@ Input.propTypes = {
   propToChange: PropTypes.string.isRequired,
   section: PropTypes.number.isRequired,
   setSection: PropTypes.func.isRequired,
+  validate: PropTypes.func.isRequired,
+  maxLength: PropTypes.number,
 };
