@@ -14,11 +14,11 @@ code {
 
 @font-face {
   font-family: 'thaleahfat';
-  src: url('./ThaleahFat.ttf');
+  src: url('../ThaleahFat.ttf');
 }
 
 body {
-  background-image: url('./bg-night-city.jpg');
+  background-image: url('../bg-night-city.jpg');
   background-repeat: repeat-x;
   background-color: black;
   font-family: 'thaleahfat';
