@@ -1,4 +1,4 @@
-:root {
+/* :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -10,4 +10,30 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+@font-face {
+  font-family: 'thaleahfat';
+  src: url('ThaleahFat.ttf');
+}
+
+body {
+  background-image: url('bg-night-city.jpg');
+  background-repeat: repeat-x;
+  background-color: black;
+  font-family: 'thaleahfat';
+  font-size: 40px;
+  color: white;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+}
+
+.header {
+  font-family: 'thaleahfat';
+  font-size: 80px;
+  color: white;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
 }

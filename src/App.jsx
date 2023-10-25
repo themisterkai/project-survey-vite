@@ -12,6 +12,7 @@ import { Input } from './SiteSections/Input';
 import { Buttons } from './SiteSections/Buttons';
 import { Range } from './SiteSections/Range';
 import { Story } from './SiteSections/Story';
+import { Header } from './SiteSections/Header';
 
 export const App = () => {
   const [section, setSection] = useState(0);
@@ -39,7 +40,7 @@ export const App = () => {
   };
   return (
     <div>
-      {siteSections[section].header}
+      <Header text={siteSections[section].header} />
       {section === 0 && (
         <RadioButton
           state={state}
