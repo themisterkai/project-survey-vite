@@ -65,3 +65,15 @@ button:disabled {
   -webkit-text-stroke-color: grey;
   -webkit-text-stroke-width: 1px;
 }
+
+input,
+select {
+  font-family: 'thaleahfat';
+  font-size: 60px; /* if that’s what you want... */
+  line-height: 1.4; /* somewhat excessive */
+  color: #333333; /* if that’s what you want, but it reduces legibility */
+  background: white; /* always set background when you set color */
+  -webkit-text-fill-color: #333333;
+  -webkit-text-stroke-color: lightgray;
+  -webkit-text-stroke-width: 1px;
+}

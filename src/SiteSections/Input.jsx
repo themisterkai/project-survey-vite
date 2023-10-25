@@ -11,7 +11,7 @@ export const Input = ({
 }) => {
   const handleKeyUp = e => {
     validate(e.target.value);
-    if (e.key === 'Enter' && state.error === '') {
+    if (e.key === 'Enter' && state.error === '' && state[propToChange] !== '') {
       setSection(section + 1);
     }
   };
@@ -19,7 +19,9 @@ export const Input = ({
     <div className="input">
       <input
         onKeyUp={handleKeyUp}
-        onChange={e => setState({ ...state, [propToChange]: e.target.value })}
+        onChange={e =>
+          setState({ ...state, [propToChange]: e.target.value.trimStart() })
+        }
         value={state[propToChange]}
         maxLength={maxLength}
         autoComplete="off"
