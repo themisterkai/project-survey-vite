@@ -37,14 +37,14 @@ body {
   margin-top: 20px;
 }
 
-input[type='range'] {
-  min-width: 100%;
-}
-
 .range {
-  max-width: 330px;
+  width: 100%;
   display: inline-block;
   text-align: center;
+}
+
+input[type='range'] {
+  width: 100%;
 }
 
 .main-container {

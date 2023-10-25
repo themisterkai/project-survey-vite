@@ -12,7 +12,7 @@ export const siteSections = [
     property: 'minions',
   },
   {
-    header: 'Which programming language do you want to learn?',
+    header: 'Which one do you want to learn?',
     property: 'programmingLanguage',
   },
   {
