@@ -5,7 +5,13 @@ import { siteSections, initialState } from '../constants';
 export const Buttons = ({ section, setSection, state, setState }) => {
   const hasError = state.error !== '';
   const increase = () => setSection(section + 1);
-  const decrease = () => setSection(section - 1);
+  const decrease = () => {
+    if (state.error !== '') {
+      setState({ ...state, [siteSections[section].property]: '', error: '' });
+    }
+    setSection(section - 1);
+  };
+
   const disabled = state[siteSections[section].property] === '' || hasError;
   return (
     <div className="buttons">

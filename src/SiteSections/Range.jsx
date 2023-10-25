@@ -9,7 +9,9 @@ export const Range = ({ state, setState, min, max, propToChange }) => {
           type="range"
           min={min}
           max={max}
-          onChange={e => setState({ ...state, [propToChange]: e.target.value })}
+          onChange={e =>
+            setState({ ...state, [propToChange]: e.target.value.toLowerCase() })
+          }
           value={state[propToChange]}
         ></input>
       </div>
