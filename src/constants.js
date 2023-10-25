@@ -12,7 +12,7 @@ export const siteSections = [
     property: 'minions',
   },
   {
-    header: 'Which programming language do you want to learn?',
+    header: 'Which one do you want to learn?',
     property: 'programmingLanguage',
   },
   {
@@ -42,7 +42,7 @@ export const initialState = {
 export const pronounOptions = [
   {
     value: '',
-    label: 'Select a Pronoun:',
+    label: 'Select one:',
   },
   {
     value: 'he',
@@ -151,6 +151,12 @@ const getPronoun = (type, pronoun) => {
     },
   };
   return pronounMap[type][pronoun];
+};
+
+export const getTitle = ({ pet, pronoun }) => {
+  return `The Coding ${capitalize(pet)} and the Amazing ${capitalize(
+    getPronoun('boy', pronoun)
+  )}`;
 };
 
 export const generateStory = ({

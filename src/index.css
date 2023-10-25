@@ -27,26 +27,49 @@ body {
   -webkit-text-fill-color: white;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.range {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+.main-container {
+  margin: 0 auto;
 }
 
 .header {
   font-family: 'thaleahfat';
-  font-size: 80px;
+  font-size: 60px;
   color: white;
   -webkit-text-fill-color: black;
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 2px;
+  text-align: center;
 }
 
 button {
   background-color: rgb(255, 37, 124);
   font-family: 'thaleahfat';
   color: black;
-  padding: 15px 32px;
+  padding: 12px 27px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 40px;
+  font-size: 30px;
   -webkit-text-fill-color: white;
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 1px;
@@ -56,11 +79,11 @@ button:disabled {
   background-color: rgb(179, 177, 177);
   font-family: 'thaleahfat';
   color: black;
-  padding: 15px 32px;
+  padding: 12px 27px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 40px;
+  font-size: 30px;
   -webkit-text-fill-color: grey;
   -webkit-text-stroke-color: grey;
   -webkit-text-stroke-width: 1px;
@@ -68,12 +91,86 @@ button:disabled {
 
 input,
 select {
+  max-width: 100%;
   font-family: 'thaleahfat';
-  font-size: 60px; /* if that’s what you want... */
+  font-size: 40px; /* if that’s what you want... */
   line-height: 1.4; /* somewhat excessive */
   color: #333333; /* if that’s what you want, but it reduces legibility */
   background: white; /* always set background when you set color */
   -webkit-text-fill-color: #333333;
   -webkit-text-stroke-color: lightgray;
   -webkit-text-stroke-width: 1px;
+}
+
+.dropown select {
+  width: 100%;
+}
+
+.input input,
+.dropown input {
+  margin: 50px 0px;
+  width: 100%;
+  min-width: 100%;
+}
+
+select {
+  width: 100%;
+}
+
+@media (min-width: 500px) {
+  .main-container {
+    width: 100%;
+    max-width: 800px;
+  }
+  .header {
+    font-family: 'thaleahfat';
+    font-size: 80px;
+    color: white;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 2px;
+  }
+  input,
+  select {
+    max-width: 90%;
+    font-family: 'thaleahfat';
+    font-size: 60px; /* if that’s what you want... */
+    line-height: 1.4; /* somewhat excessive */
+    color: #333333; /* if that’s what you want, but it reduces legibility */
+    background: white; /* always set background when you set color */
+    -webkit-text-fill-color: #333333;
+    -webkit-text-stroke-color: lightgray;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  select {
+    width: 100%;
+  }
+  button {
+    background-color: rgb(255, 37, 124);
+    font-family: 'thaleahfat';
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  button:disabled {
+    background-color: rgb(179, 177, 177);
+    font-family: 'thaleahfat';
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    -webkit-text-fill-color: grey;
+    -webkit-text-stroke-color: grey;
+    -webkit-text-stroke-width: 1px;
+  }
 }
