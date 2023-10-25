@@ -3,9 +3,10 @@ import { PropTypes } from 'prop-types';
 import { siteSections, initialState } from '../constants';
 
 export const Buttons = ({ section, setSection, state, setState }) => {
+  const hasError = state.error !== '';
   const increase = () => setSection(section + 1);
   const decrease = () => setSection(section - 1);
-  const disabled = state[siteSections[section].property] === '';
+  const disabled = state[siteSections[section].property] === '' || hasError;
   return (
     <div className="buttons">
       <span className="button-span">

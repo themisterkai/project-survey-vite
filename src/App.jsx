@@ -8,7 +8,7 @@ import {
 } from './constants';
 import { Dropdown } from './SiteSections/Dropdown';
 import { RadioButton } from './SiteSections/RadioButton';
-import { Name } from './SiteSections/Name';
+import { Input } from './SiteSections/Input';
 import { Buttons } from './SiteSections/Buttons';
 import { Range } from './SiteSections/Range';
 import { Story } from './SiteSections/Story';
@@ -16,6 +16,27 @@ import { Story } from './SiteSections/Story';
 export const App = () => {
   const [section, setSection] = useState(0);
   const [state, setState] = useState(initialState);
+
+  const regex = /^[a-z][a-z\s]*$/;
+
+  const inputValidation = input => {
+    if (!regex.test(input)) {
+      setState({ ...state, error: 'Only letters and spaces are allowed' });
+    } else {
+      setState({ ...state, error: '' });
+    }
+    if (
+      state.petName !== '' &&
+      state.petName.toLowerCase() === state.name.toLowerCase()
+    ) {
+      setState({
+        ...state,
+        error: 'Please choose different names for your pet and yourself',
+      });
+    } else {
+      setState({ ...state, error: '' });
+    }
+  };
   return (
     <div>
       {siteSections[section].header}
@@ -28,10 +49,13 @@ export const App = () => {
         />
       )}
       {section === 1 && (
-        <Name
+        <Input
           state={state}
           setState={setState}
           propToChange={siteSections[section].property}
+          section={section}
+          setSection={setSection}
+          validate={inputValidation}
         />
       )}
       {section === 2 && (
@@ -52,10 +76,13 @@ export const App = () => {
         />
       )}
       {section === 4 && (
-        <Name
+        <Input
           state={state}
           setState={setState}
           propToChange={siteSections[section].property}
+          section={section}
+          setSection={setSection}
+          validate={inputValidation}
         />
       )}
       {section === 5 && (
@@ -73,6 +100,7 @@ export const App = () => {
         state={state}
         setState={setState}
       />
+      {state.error}
     </div>
   );
 };

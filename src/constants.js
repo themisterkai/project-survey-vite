@@ -36,6 +36,7 @@ export const initialState = {
   programmingLanguage: '',
   pronoun: '',
   name: '',
+  error: '',
 };
 
 export const pronounOptions = [
@@ -161,8 +162,8 @@ export const generateStory = ({
   name,
 }) => {
   const numOfMinions = numberToWords[minions];
-  name = capitalize(name);
-  petName = capitalize(petName);
+  name = capitalize(name.toLowerCase());
+  petName = capitalize(petName.toLowerCase());
 
   return `Once upon a tremendous time, in a tremendous village, there lived an amazing 
   ${getPronoun(
@@ -189,7 +190,7 @@ export const generateStory = ({
   ${petName}, folks, this ${pet} was on board. And ${name} - ${getPronoun(
     'he',
     pronoun
-  )} ${pronoun === 'they' ? 'were' : 'was'} ready to make coding great again.
+  )} ${pronoun === 'they' ? 'were' : 'was'} ready to Make Coding Great Again™.
   And with ${numOfMinions} minions behind them, they were an unstoppable force.
   <p/>
   ${name} found this old book, folks, a really tremendous book about ${programmingLanguage},
