@@ -24,7 +24,7 @@ export const siteSections = [
     property: 'pronoun',
   },
   {
-    header: `Story`,
+    header: '',
     property: '',
   },
 ];

@@ -21,12 +21,9 @@ export const App = () => {
   const regex = /^[a-z][a-z\s]*$/;
 
   const inputValidation = input => {
-    if (!regex.test(input)) {
+    if (state.petName !== '' && !regex.test(input)) {
       setState({ ...state, error: 'Only letters and spaces are allowed' });
-    } else {
-      setState({ ...state, error: '' });
-    }
-    if (
+    } else if (
       state.petName !== '' &&
       state.petName.toLowerCase() === state.name.toLowerCase()
     ) {
