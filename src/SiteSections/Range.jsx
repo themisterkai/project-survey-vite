@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 export const Range = ({ state, setState, min, max, propToChange }) => {
   return (
     <div className="range">
-      <div>{state[propToChange]}</div>
+      <div className="range-label">{state[propToChange]}</div>
       <div>
         <input
           type="range"

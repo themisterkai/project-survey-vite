@@ -4,7 +4,7 @@ export const siteSections = [
     property: 'pet',
   },
   {
-    header: 'What should we call your new pet?',
+    header: 'Pick a name for your pet!',
     property: 'petName',
   },
   {
@@ -12,7 +12,7 @@ export const siteSections = [
     property: 'minions',
   },
   {
-    header: 'Which one do you want to learn?',
+    header: 'Pick something to learn:',
     property: 'programmingLanguage',
   },
   {

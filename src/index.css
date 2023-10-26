@@ -27,28 +27,15 @@ body {
   -webkit-text-fill-color: white;
   -webkit-text-stroke-color: black;
   -webkit-text-stroke-width: 1px;
-  margin: 30px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.buttons {
-  margin-top: 20px;
-}
-
-.range {
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-}
-
-input[type='range'] {
-  width: 100%;
-}
-
 .main-container {
   margin: 0 auto;
+  max-width: 95%;
 }
 
 .header {
@@ -59,6 +46,7 @@ input[type='range'] {
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 2px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 button {
@@ -104,23 +92,46 @@ select {
 
 .dropown select {
   width: 100%;
+  margin: 100px 0;
 }
 
 .input input,
 .dropown input {
-  margin: 50px 0px;
-  width: 100%;
-  min-width: 100%;
+  width: 90%;
+  min-width: 90%;
 }
 
 select {
   width: 100%;
 }
 
+.radio-button-options {
+  margin: 10px 0px;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.range {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 100px;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
 @media (min-width: 500px) {
+  .body {
+    margin: 30px;
+  }
   .main-container {
-    width: 100%;
-    max-width: 800px;
+    width: 800px;
+    /* max-width: 800px; */
   }
   .header {
     font-family: 'thaleahfat';
@@ -141,6 +152,20 @@ select {
     -webkit-text-fill-color: #333333;
     -webkit-text-stroke-color: lightgray;
     -webkit-text-stroke-width: 1px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .buttons {
+    margin-top: 50px;
+  }
+
+  .input input,
+  .dropown input {
+    width: 100%;
+    min-width: 100%;
   }
 
   select {
