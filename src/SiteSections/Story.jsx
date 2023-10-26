@@ -4,6 +4,7 @@ import parse from 'html-react-parser';
 import { generateStory, getTitle } from '../constants';
 import { Header } from './Header';
 import { useState } from 'react';
+import { PageNumber } from './PageNumber';
 
 export const Story = ({ state }) => {
   const [page, setPage] = useState(0);
@@ -25,13 +26,13 @@ export const Story = ({ state }) => {
     <div>
       <div className="story"></div>
       <Header text={getTitle({ ...state })} />
-      <div className="page-number">
-        page {page + 1} of {storyArray.length}
-      </div>
+      <PageNumber currentPage={page + 1} total={storyArray.length} />
       {parse(storyArray[page])}
-      <div className="page-number">
-        page {page + 1} of {storyArray.length}
-      </div>
+      {window.screen.width < 667 ? (
+        <PageNumber currentPage={page + 1} total={storyArray.length} />
+      ) : (
+        <></>
+      )}
       <div className="button-story">
         {page === 0 ? (
           <></>

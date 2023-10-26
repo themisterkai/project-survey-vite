@@ -13,7 +13,7 @@ export const siteSections = [
   },
   {
     header: 'Choose a number',
-    property: 'minions',
+    property: 'kitties',
   },
   {
     header: 'Pick something to learn:',
@@ -36,7 +36,7 @@ export const siteSections = [
 export const initialState = {
   pet: '',
   petName: '',
-  minions: 3,
+  kitties: 3,
   programmingLanguage: '',
   pronoun: '',
   name: '',
@@ -64,12 +64,12 @@ export const pronounOptions = [
 
 export const petOptions = [
   {
-    value: 'cat',
-    label: 'cat 🐈‍',
-  },
-  {
     value: 'dog',
     label: 'dog 🐕',
+  },
+  {
+    value: 'beaver',
+    label: 'beaver 🦫',
   },
   {
     value: 'squirrel',
@@ -166,12 +166,12 @@ export const getTitle = ({ pet, pronoun }) => {
 export const generateStory = ({
   pet,
   petName,
-  minions,
+  kitties,
   programmingLanguage,
   pronoun,
   name,
 }) => {
-  const numOfMinions = numberToWords[minions];
+  const numOfKitties = numberToWords[kitties];
   name = capitalize(name.toLowerCase());
   petName = capitalize(petName.toLowerCase());
 
@@ -190,7 +190,7 @@ export const generateStory = ({
     <span className="story-highlight">${name}</span> and <span className="story-highlight">
     ${petName}</span>, they were a team, always together, always looking for the next
     big thing. They also had not one, not two, but <span className="story-highlight">
-    ${numOfMinions}</span> tremendous minions,all eager to learn and help out.`,
+    ${numOfKitties}</span> tremendous kitties, all eager to learn and help out.`,
 
     `One day, <span className="story-highlight">${name}</span> got this huge idea.
     "<span className="story-highlight">${petName}</span>,"  
@@ -203,8 +203,8 @@ export const generateStory = ({
     <p/>
     <span className="story-highlight">${petName}</span> and 
     <span className="story-highlight">${name}</span>, they were ready to Make 
-    Coding Great Again™. And with  <span className="story-highlight">${numOfMinions}
-    </span> minions behind them, they were an unstoppable force.`,
+    Coding Great Again™. And with  <span className="story-highlight">${numOfKitties}
+    </span> kitties behind them, they were an unstoppable force.`,
 
     `<span className="story-highlight">${name}</span> found this old book about 
     <span className="story-highlight">${programmingLanguage}</span>, in 
@@ -216,20 +216,20 @@ export const generateStory = ({
     on the screen.
     <p/>
     As time went on, they got better and better. They built games. They made amazing
-    puzzles. And those <span className="story-highlight">${numOfMinions}</span> minions?
+    puzzles. And those <span className="story-highlight">${numOfKitties}</span> kitties?
     They were busy coding, turning ideas into reality using 
     <span className="story-highlight">${programmingLanguage}</span>.`,
 
-    `Word got out. People heard about <span className="story-highlight">${name}
-    </span>, <span className="story-highlight">${petName}</span>, and their army of
-    <span className="story-highlight">${numOfMinions}</span>
-    incredible minions, and the amazing things they were doing with coding.
+    `Word got out. People heard about <span className="story-highlight">${name}</span>,
+    <span className="story-highlight">${petName}</span>, and their
+    <span className="story-highlight">${numOfKitties}</span>
+    incredible kitties, and the amazing things they were doing with coding.
     <p/>
     Then, one cold night, a problem came up. The village's ancient well 
     had dried up. People were worried. But <span className="story-highlight">${name}</span>,
     <span className="story-highlight">${petName}</span>, and their
-    <span className="story-highlight">${numOfMinions}</span>
-    minions saw this as a chance to use their skills.`,
+    <span className="story-highlight">${numOfKitties}</span>
+    kitties saw this as a chance to use their skills.`,
 
     `Together, they coded a system using <span className="story-highlight">
     ${programmingLanguage}</span> that could track rainfall, predict the weather,
@@ -238,7 +238,7 @@ export const generateStory = ({
     <p/>
     <span className="story-highlight">${name}</span>,
     <span className="story-highlight">${petName}</span>, and their army of
-    <span className="story-highlight">${numOfMinions}</span> minions, they didn't just
+    <span className="story-highlight">${numOfKitties}</span> kitties, they didn't just
     solve a problem. They showed the world what coding could do.`,
     `
     And that, my friends, is how the story of the Coding <span className="story-highlight">
@@ -246,8 +246,8 @@ export const generateStory = ({
       pet
     )}</span>, the Amazing <span className="story-highlight">${capitalize(
       getPronoun('boy', pronoun)
-    )}</span>, and their army of <span className="story-highlight">${numOfMinions}</span>
-    incredible minions became the stuff of legend.
+    )}</span>, and their <span className="story-highlight">${numOfKitties}</span>
+    lovable kitties became the stuff of legend.
     <p/>
     People talked about them for generations, not just for their amazing solutions, but for
     how they brought people together through the power of coding and the strength of friendship.`,
