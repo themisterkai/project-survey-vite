@@ -141,6 +141,13 @@ input[type='range'] {
   -webkit-text-stroke-width: 1px;
 }
 
+.error {
+  margin-top: 10px;
+  -webkit-text-fill-color: rgb(249, 127, 127);
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+}
+
 @media (min-width: 1025px) {
   .main-container {
     width: 900px;
