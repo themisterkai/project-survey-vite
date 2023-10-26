@@ -5,7 +5,7 @@ export const RadioButton = ({ state, setState, options, propToChange }) => {
     <div className="radio-button">
       {options.map(option => (
         <p className="radio-button-options" key={option.value}>
-          <label>
+          <label className="radio-button-label">
             <input
               type="radio"
               value={option.value}
