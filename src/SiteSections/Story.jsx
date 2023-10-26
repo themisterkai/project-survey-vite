@@ -3,20 +3,23 @@ import parse from 'html-react-parser';
 
 import { generateStory, getTitle } from '../constants';
 import { Header } from './Header';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const Story = ({ state }) => {
-  const scrollToTop = useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const [page, setPage] = useState(0);
   const storyArray = generateStory({ ...state });
   const increase = () => {
     setPage(page + 1);
-    scrollToTop();
+    if (window.screen.width < 667) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
   };
-
-  const decrease = () => setPage(page - 1);
+  const decrease = () => {
+    setPage(page - 1);
+    if (window.screen.width < 667) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
+  };
   return (
     <div>
       <div className="story"></div>

@@ -14,6 +14,7 @@ import { Range } from './SiteSections/Range';
 import { Story } from './SiteSections/Story';
 import { Header } from './SiteSections/Header';
 import { Start } from './SiteSections/Start';
+import { Error } from './SiteSections/Error';
 
 export const App = () => {
   const [section, setSection] = useState(0);
@@ -100,7 +101,7 @@ export const App = () => {
         state={state}
         setState={setState}
       />
-      {state.error}
+      <Error error={state.error} />
     </div>
   );
 };

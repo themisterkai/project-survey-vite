@@ -184,7 +184,7 @@ export const generateStory = ({
       'he',
       pronoun
     )}</span> had a <span className="story-highlight">${pet}</span> named <span className="story-highlight">${petName}</span> whose fur was as dark
-   as the night sky back then.
+   as a starless night.
   <p/>
   <span className="story-highlight">${name}</span> and <span className="story-highlight">${petName}</span>, they were a team, always together, always looking for the next
   big thing. They also had not one, not two, but <span className="story-highlight">${numOfMinions}</span> tremendous minions,
