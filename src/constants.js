@@ -50,7 +50,7 @@ export const pronounOptions = [
   },
   {
     value: 'he',
-    label: 'he / his',
+    label: 'he / him',
   },
   {
     value: 'she',
