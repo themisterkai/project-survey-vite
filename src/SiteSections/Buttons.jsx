@@ -52,6 +52,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
               onClick={() => {
                 setState(initialState);
                 setSection(0);
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
               }}
             >
               Create a new story

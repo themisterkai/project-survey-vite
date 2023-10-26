@@ -143,6 +143,9 @@ input[type='range'] {
 .page-number {
   text-align: center;
   background-color: white;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: black;
+  margin-bottom: 20px;
 }
 
 .button-story button {
@@ -163,11 +166,52 @@ input[type='range'] {
   -webkit-text-stroke-width: 1px;
 }
 
+@media (min-width: 667px) {
+  .main-container {
+    width: 667px;
+  }
+  .header {
+    margin-top: 20px;
+    font-size: 80px;
+  }
+  input,
+  select {
+    max-width: 90%;
+    font-size: 60px;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .buttons {
+    margin-top: 50px;
+  }
+
+  .input input,
+  .dropown input {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+  button {
+    font-size: 40px;
+  }
+
+  button:disabled {
+    font-size: 40px;
+  }
+}
+
 @media (min-width: 1025px) {
   .main-container {
     width: 900px;
   }
   .header {
+    margin-top: 20px;
     font-size: 80px;
   }
   input,
