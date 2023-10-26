@@ -113,7 +113,8 @@ select {
   margin: 10px 0px;
 }
 
-.buttons {
+.buttons,
+.button-story {
   text-align: center;
   margin-top: 30px;
 }
@@ -127,6 +128,16 @@ select {
 
 input[type='range'] {
   width: 100%;
+}
+
+.page-number {
+  text-align: center;
+  background-color: white;
+}
+
+.button-story button {
+  background-color: rgb(190, 37, 255);
+  margin: 0;
 }
 
 @media (min-width: 500px) {

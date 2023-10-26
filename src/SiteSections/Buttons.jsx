@@ -30,7 +30,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
             </button>
           </>
         )}
-        {section > 1 && section < siteSections.length - 1 && (
+        {section > 1 && section < siteSections.length - 2 && (
           <>
             <button onClick={() => decrease()}>Previous</button>
             <button onClick={() => increase()} disabled={disabled}>
@@ -38,7 +38,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
             </button>
           </>
         )}
-        {section === siteSections.length - 1 && (
+        {section === siteSections.length - 2 && (
           <>
             <button onClick={() => decrease()}>Previous</button>
             <button onClick={() => increase()} disabled={disabled}>
@@ -46,7 +46,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
             </button>
           </>
         )}
-        {section === siteSections.length && (
+        {section === siteSections.length - 1 && (
           <>
             <button
               onClick={() => {
