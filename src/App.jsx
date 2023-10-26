@@ -13,6 +13,7 @@ import { Buttons } from './SiteSections/Buttons';
 import { Range } from './SiteSections/Range';
 import { Story } from './SiteSections/Story';
 import { Header } from './SiteSections/Header';
+import { Start } from './SiteSections/Start';
 
 export const App = () => {
   const [section, setSection] = useState(0);
@@ -38,7 +39,8 @@ export const App = () => {
   return (
     <div className="main-container">
       <Header text={siteSections[section].header} />
-      {section === 0 && (
+      {section === 0 && <Start />}
+      {section === 1 && (
         <RadioButton
           state={state}
           setState={setState}
@@ -46,7 +48,7 @@ export const App = () => {
           propToChange={siteSections[section].property}
         />
       )}
-      {section === 1 && (
+      {section === 2 && (
         <Input
           state={state}
           setState={setState}
@@ -56,7 +58,7 @@ export const App = () => {
           validate={inputValidation}
         />
       )}
-      {section === 2 && (
+      {section === 3 && (
         <Range
           state={state}
           setState={setState}
@@ -65,7 +67,7 @@ export const App = () => {
           propToChange={siteSections[section].property}
         />
       )}
-      {section === 3 && (
+      {section === 4 && (
         <RadioButton
           state={state}
           setState={setState}
@@ -73,7 +75,7 @@ export const App = () => {
           propToChange={siteSections[section].property}
         />
       )}
-      {section === 4 && (
+      {section === 5 && (
         <Input
           state={state}
           setState={setState}
@@ -83,7 +85,7 @@ export const App = () => {
           validate={inputValidation}
         />
       )}
-      {section === 5 && (
+      {section === 6 && (
         <Dropdown
           state={state}
           setState={setState}
@@ -91,7 +93,7 @@ export const App = () => {
           propToChange={siteSections[section].property}
         />
       )}
-      {section === 6 && <Story state={state} />}
+      {section === 7 && <Story state={state} />}
       <Buttons
         section={section}
         setSection={setSection}

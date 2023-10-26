@@ -49,6 +49,10 @@ body {
   margin-bottom: 30px;
 }
 
+.start {
+  text-align: center;
+}
+
 button {
   background-color: rgb(255, 37, 124);
   font-family: 'thaleahfat';

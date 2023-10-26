@@ -19,11 +19,18 @@ export const Buttons = ({ section, setSection, state, setState }) => {
         {section === 0 && (
           <>
             <button onClick={() => increase()} disabled={disabled}>
+              Start
+            </button>
+          </>
+        )}
+        {section === 1 && (
+          <>
+            <button onClick={() => increase()} disabled={disabled}>
               Next
             </button>
           </>
         )}
-        {section !== 0 && section < 5 && (
+        {section > 1 && section < siteSections.length - 1 && (
           <>
             <button onClick={() => decrease()}>Previous</button>
             <button onClick={() => increase()} disabled={disabled}>
@@ -31,7 +38,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
             </button>
           </>
         )}
-        {section === 5 && (
+        {section === siteSections.length - 1 && (
           <>
             <button onClick={() => decrease()}>Previous</button>
             <button onClick={() => increase()} disabled={disabled}>
@@ -39,7 +46,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
             </button>
           </>
         )}
-        {section === 6 && (
+        {section === siteSections.length && (
           <>
             <button
               onClick={() => {
