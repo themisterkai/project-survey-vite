@@ -15,6 +15,7 @@ import { Story } from './SiteSections/Story';
 import { Header } from './SiteSections/Header';
 import { Start } from './SiteSections/Start';
 import { Error } from './SiteSections/Error';
+import { ProgressBar } from './SiteSections/ProgressBar';
 
 export const App = () => {
   const [section, setSection] = useState(0);
@@ -37,8 +38,16 @@ export const App = () => {
       setState({ ...state, error: '' });
     }
   };
+
   return (
     <div className="main-container">
+      {section > 0 && section < siteSections.length - 1 ? (
+        <ProgressBar
+          completed={Math.round((section / (siteSections.length - 1)) * 100)}
+        />
+      ) : (
+        <></>
+      )}
       <Header text={siteSections[section].header} />
       {section === 0 && <Start />}
       {section === 1 && (
