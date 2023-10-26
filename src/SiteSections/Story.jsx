@@ -10,11 +10,15 @@ export const Story = ({ state }) => {
   const storyArray = generateStory({ ...state });
   const increase = () => {
     setPage(page + 1);
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    if (window.screen.width < 667) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
   };
   const decrease = () => {
     setPage(page - 1);
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    if (window.screen.width < 667) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
   };
   return (
     <div>
