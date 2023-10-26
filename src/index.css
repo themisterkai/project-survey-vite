@@ -140,6 +140,12 @@ input[type='range'] {
   margin: 0;
 }
 
+.story-highlight {
+  -webkit-text-fill-color: yellow;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 1px;
+}
+
 @media (min-width: 500px) {
   .body {
     margin: 30px;

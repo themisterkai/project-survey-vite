@@ -176,65 +176,63 @@ export const generateStory = ({
   petName = capitalize(petName.toLowerCase());
 
   return [
-    `Once upon a time, in a small village in Sweden, there lived an amazing 
-  ${getPronoun('boy', pronoun)} named ${name}. ${getPronoun(
+    `Once upon a time, there lived a 
+    <span className="story-highlight">${getPronoun(
+      'boy',
+      pronoun
+    )}</span> named <span className="story-highlight">${name}</span>. <span className="story-highlight">${getPronoun(
       'he',
       pronoun
-    )} had a ${pet}, a ${pet} named ${petName}. This ${pet} had fur that was dark,
-  almost as the night sky back then. And the ${pet}'s eyes, they shone like two big 
-  beautiful stars.
+    )}</span> had a <span className="story-highlight">${pet}</span> named <span className="story-highlight">${petName}</span> whose fur was as dark
+   as the night sky back then.
   <p/>
-  ${name} and ${petName}, they were a team, always together, always looking for the next
-  big thing. They also had not one, not two, but ${numOfMinions} tremendous minions,
+  <span className="story-highlight">${name}</span> and <span className="story-highlight">${petName}</span>, they were a team, always together, always looking for the next
+  big thing. They also had not one, not two, but <span className="story-highlight">${numOfMinions}</span> tremendous minions,
   all eager to learn and help out.`,
 
-    `One day, ${name} got this huge idea. "${petName},"  ${getPronoun(
+    `One day, <span className="story-highlight">${name}</span> got this huge idea. "<span className="story-highlight">${petName}</span>,"  <span className="story-highlight">${getPronoun(
       'he',
       pronoun
-    )} said, "what if we learned how to code,
-  what if we learned ${programmingLanguage} and we made something incredible?"
+    )}</span> said, "what if we learned how to code,
+  what if we learned <span className="story-highlight">${programmingLanguage}</span> and we made something incredible?"
   <p/>
-  ${petName} and ${name} - ${getPronoun(
+  <span className="story-highlight">${petName}</span> and <span className="story-highlight">${name}</span> - <span className="story-highlight">${getPronoun(
       'he',
       pronoun
-    )} they were ready to Make Coding Great Again™.
-  And with ${numOfMinions} minions behind them, they were an unstoppable force.`,
+    )}</span> they were ready to Make Coding Great Again™.
+  And with <span className="story-highlight">${numOfMinions}</span> minions behind them, they were an unstoppable force.`,
 
-    `${name} found this old book about ${programmingLanguage},
-    in ${getPronoun(
+    `<span className="story-highlight">${name}</span> found this old book about <span className="story-highlight">${programmingLanguage}</span>,
+    in <span className="story-highlight">${getPronoun(
       'his',
       pronoun
-    )} grandfather's attic. They started small, making ${petName}'s virtual mouse run around on the screen.
+    )}</span> grandfather's attic. They started small, making <span className="story-highlight">${petName}</span>'s virtual mouse run around on the screen.
     <p/>
-    As time went on, they got better and better. They built games. They made puzzles, the best puzzles, that even the 
-    smartest people couldn't solve. And those ${numOfMinions} minions? They were coding like you 
-    wouldn't believe, turning ideas into reality using ${programmingLanguage}.
-    `,
+    As time went on, they got better and better. They built games. They made amazing puzzles. And those <span className="story-highlight">${numOfMinions}</span> minions? They were busy coding, turning ideas into reality using <span className="story-highlight">${programmingLanguage}</span>.`,
 
-    `Word got out. People heard about ${name}, ${petName}, and their army of ${numOfMinions} 
-    incredible minions, and the amazing things they were doing with coding. Kids from all over 
-    wanted to learn from them. 
+    `Word got out. People heard about <span className="story-highlight">${name}</span>, <span className="story-highlight">${petName}</span>, and their army of <span className="story-highlight">${numOfMinions}</span>
+    incredible minions, and the amazing things they were doing with coding.
     <p/>
     Then, one cold night, a problem came up. The village's ancient well 
-    had dried up. People were worried. But ${name}, ${petName}, and their ${numOfMinions}
+    had dried up. People were worried. But <span className="story-highlight">${name}</span>, <span className="story-highlight">${petName}</span>, and their <span className="story-highlight">${numOfMinions}</span>
     minions saw this as a chance to use their skills.
     `,
     `
     Together, they coded a system using
-    ${programmingLanguage} that could track rainfall, predict the weather, and manage the water like
+    <span className="story-highlight">${programmingLanguage}</span> that could track rainfall, predict the weather, and manage the water like
     you wouldn't believe. The  villagers watched, amazed, as that well started filling up again.
     <p/>
-    ${name}, ${petName}, and their army of ${numOfMinions} minions, they didn't just solve a problem. They 
+    <span className="story-highlight">${name}</span>, <span className="story-highlight">${petName}</span>, and their army of <span className="story-highlight">${numOfMinions}</span> minions, they didn't just solve a problem. They 
     showed the world what coding could do.
     `,
     `
-    And that, my friends, is how the story of the Coding ${capitalize(
+    And that, my friends, is how the story of the Coding <span className="story-highlight">${capitalize(
       pet
-    )}, the Amazing ${capitalize(
+    )}</span>, the Amazing <span className="story-highlight">${capitalize(
       getPronoun('boy', pronoun)
-    )}, and their army of ${numOfMinions} incredible minions became the stuff of legend.
+    )}</span>, and their army of <span className="story-highlight">${numOfMinions}</span> incredible minions became the stuff of legend.
     People talked about them for generations, not just for their amazing solutions, but for how they 
     brought people together through the power of coding and the strength of friendship, with an army of
-    ${numOfMinions} minions leading the way.`,
+    <span className="story-highlight">${numOfMinions}</span> minions leading the way.`,
   ];
 };
