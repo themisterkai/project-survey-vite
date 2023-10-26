@@ -6,9 +6,8 @@
 
 # Survey Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project makes use of different form fields to get some practice with React State. I decided to
+make a little story from the user response.
 
 ## Getting Started with the Project
 
@@ -28,10 +27,5 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-## Instructions
-
-<a href="instructions.md">
-   See instructions of this project
-  </a>
+You can view the project here:
+[https://kai-story.netlify.app/](https://kai-story.netlify.app/)

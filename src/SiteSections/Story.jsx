@@ -17,7 +17,7 @@ export const Story = ({ state }) => {
   };
   const decrease = () => {
     setPage(page - 1);
-    if (window.screen.width < 668) {
+    if (window.screen.width < 667) {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }
   };
