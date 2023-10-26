@@ -1,5 +1,9 @@
 export const siteSections = [
   {
+    header: 'Welcome!',
+    property: '',
+  },
+  {
     header: 'Choose an animal',
     property: 'pet',
   },
