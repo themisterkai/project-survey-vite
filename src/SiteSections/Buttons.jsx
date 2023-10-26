@@ -54,7 +54,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
                 setSection(0);
               }}
             >
-              Restart
+              Create a new story
             </button>
           </>
         )}
