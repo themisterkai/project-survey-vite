@@ -16,6 +16,7 @@ import { Header } from './SiteSections/Header';
 import { Start } from './SiteSections/Start';
 import { Error } from './SiteSections/Error';
 import { ProgressBar } from './SiteSections/ProgressBar';
+import { Footer } from './SiteSections/Footer';
 
 export const App = () => {
   const [section, setSection] = useState(0);
@@ -111,6 +112,7 @@ export const App = () => {
         setState={setState}
       />
       <Error error={state.error} />
+      {section === 0 && <Footer />}
     </div>
   );
 };

@@ -35,6 +35,21 @@ body {
   margin-bottom: 30px;
 }
 
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
 .start {
   text-align: center;
 }

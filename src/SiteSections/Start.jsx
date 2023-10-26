@@ -4,9 +4,8 @@ export const Start = () => {
       <div className="start-gif">
         <img src="../cat-heart.gif"></img>
       </div>
-      <div>
-        Curious to know what{`'`}s here? <p /> Click start!
-      </div>
+      <div>Curious?</div>
+      <div>Click start!</div>
     </div>
   );
 };
