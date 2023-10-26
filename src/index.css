@@ -33,17 +33,6 @@ body {
   align-items: center;
 }
 
-.range {
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  font-size: 100px;
-}
-
-input[type='range'] {
-  width: 100%;
-}
-
 .main-container {
   margin: 0 auto;
   max-width: 95%;
@@ -108,8 +97,8 @@ select {
 
 .input input,
 .dropown input {
-  width: 100%;
-  min-width: 100%;
+  width: 90%;
+  min-width: 90%;
 }
 
 select {
@@ -123,6 +112,17 @@ select {
 .buttons {
   text-align: center;
   margin-top: 50px;
+}
+
+.range {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 100px;
+}
+
+input[type='range'] {
+  width: 100%;
 }
 
 @media (min-width: 500px) {
@@ -149,6 +149,12 @@ select {
     -webkit-text-fill-color: #333333;
     -webkit-text-stroke-color: lightgray;
     -webkit-text-stroke-width: 1px;
+  }
+
+  .input input,
+  .dropown input {
+    width: 100%;
+    min-width: 100%;
   }
 
   select {
