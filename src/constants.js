@@ -172,8 +172,8 @@ export const generateStory = ({
   name,
 }) => {
   const numOfKitties = numberToWords[kitties];
-  name = capitalize(name.toLowerCase());
-  petName = capitalize(petName.toLowerCase());
+  name = capitalize(name.toLowerCase().trimEnd());
+  petName = capitalize(petName.toLowerCase().trimEnd());
 
   return [
     `Once upon a time, there lived a <span className="story-highlight">${getPronoun(

@@ -29,7 +29,8 @@ export const App = () => {
       setState({ ...state, error: 'Only letters and spaces are allowed' });
     } else if (
       state.petName !== '' &&
-      state.petName.toLowerCase() === state.name.toLowerCase()
+      state.petName.toLowerCase().trimEnd() ===
+        state.name.toLowerCase().trimEnd()
     ) {
       setState({
         ...state,

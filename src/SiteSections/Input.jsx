@@ -12,6 +12,10 @@ export const Input = ({
   const handleKeyUp = e => {
     validate(e.target.value);
     if (e.key === 'Enter' && state.error === '' && state[propToChange] !== '') {
+      setState({
+        ...state,
+        [propToChange]: e.target.value,
+      });
       setSection(section + 1);
     }
   };
