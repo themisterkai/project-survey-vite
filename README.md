@@ -26,6 +26,8 @@ This project takes in responses from the user using a variety of form fields. Th
 
 In implementing this project, I tried to make the components stateless as much as possible which made them reusable. The data that I pass into these components I keep in a constants file. We can easily change a lot of the data used by the app just by changing the contents of our constants.
 
+Some of the question options change based on the answer from previous questions.
+
 I also have some validation on the text inputs. Only letters and spaces are allowed and you can't have the same name for yourself and your pet.
 
 All the intermediate and advanced stretch goals have been implemented. The app is also responsive. There are some elements and functionality that only show up in the mobile version, to make the app more user-friendly on a smaller screen.
