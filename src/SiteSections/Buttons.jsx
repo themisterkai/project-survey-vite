@@ -1,36 +1,43 @@
 import { PropTypes } from 'prop-types';
 
-import { siteSections, initialState } from '../constants';
+import { initialState } from '../constants';
 
-export const Buttons = ({ section, setSection, state, setState }) => {
+export const Buttons = ({
+  sectionIndex,
+  setSectionIndex,
+  currentSection,
+  sectionLength,
+  state,
+  setState,
+}) => {
   const hasError = state.error !== '';
-  const increase = () => setSection(section + 1);
+  const increase = () => setSectionIndex(sectionIndex + 1);
   const decrease = () => {
     if (state.error !== '') {
-      setState({ ...state, [siteSections[section].property]: '', error: '' });
+      setState({ ...state, [currentSection.property]: '', error: '' });
     }
-    setSection(section - 1);
+    setSectionIndex(sectionIndex - 1);
   };
 
-  const disabled = state[siteSections[section].property] === '' || hasError;
+  const disabled = state[currentSection.property] === '' || hasError;
   return (
     <div className="buttons">
       <span className="button-span">
-        {section === 0 && (
+        {sectionIndex === 0 && (
           <>
             <button onClick={() => increase()} disabled={disabled}>
               Start
             </button>
           </>
         )}
-        {section === 1 && (
+        {sectionIndex === 1 && (
           <>
             <button onClick={() => increase()} disabled={disabled}>
               Next
             </button>
           </>
         )}
-        {section > 1 && section < siteSections.length - 2 && (
+        {sectionIndex > 1 && sectionIndex < sectionLength - 2 && (
           <>
             <button onClick={() => decrease()}>Previous</button>
             <button onClick={() => increase()} disabled={disabled}>
@@ -38,7 +45,7 @@ export const Buttons = ({ section, setSection, state, setState }) => {
             </button>
           </>
         )}
-        {section === siteSections.length - 2 && (
+        {sectionIndex === sectionLength - 2 && (
           <>
             <button onClick={() => decrease()}>Previous</button>
             <button onClick={() => increase()} disabled={disabled}>
@@ -46,12 +53,12 @@ export const Buttons = ({ section, setSection, state, setState }) => {
             </button>
           </>
         )}
-        {section === siteSections.length - 1 && (
+        {sectionIndex === sectionLength - 1 && (
           <>
             <button
               onClick={() => {
                 setState(initialState);
-                setSection(0);
+                setSectionIndex(0);
                 window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
               }}
             >
@@ -65,8 +72,10 @@ export const Buttons = ({ section, setSection, state, setState }) => {
 };
 
 Buttons.propTypes = {
-  section: PropTypes.number.isRequired,
-  setSection: PropTypes.func.isRequired,
+  sectionIndex: PropTypes.number.isRequired,
+  setSectionIndex: PropTypes.func.isRequired,
+  currentSection: PropTypes.object.isRequired,
+  sectionLength: PropTypes.number.isRequired,
   state: PropTypes.object.isRequired,
   setState: PropTypes.func.isRequired,
 };

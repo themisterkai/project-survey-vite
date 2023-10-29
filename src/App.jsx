@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import {
   initialState,
-  siteSections,
-  petOptions,
+  // siteSections,
+  petAirOptions,
+  petWaterOptions,
+  petLandOptions,
   programmingOptions,
   pronounOptions,
+  elementOptions,
+  chooseSiteSections,
 } from './constants';
 import { Dropdown } from './SiteSections/Dropdown';
 import { RadioButton } from './SiteSections/RadioButton';
@@ -19,8 +23,9 @@ import { ProgressBar } from './SiteSections/ProgressBar';
 import { Footer } from './SiteSections/Footer';
 
 export const App = () => {
-  const [section, setSection] = useState(0);
+  const [sectionIndex, setSectionIndex] = useState(0);
   const [state, setState] = useState(initialState);
+  const element = state.element;
 
   const regex = /^[a-z][a-z\s]*$/;
 
@@ -41,79 +46,108 @@ export const App = () => {
     }
   };
 
+  const currentSection = chooseSiteSections(sectionIndex, state);
+  const allSectionLength = chooseSiteSections(null, state).length;
+
   return (
     <div className="main-container">
-      {section > 0 && section < siteSections.length - 1 ? (
+      {sectionIndex > 0 && sectionIndex < allSectionLength - 1 ? (
         <ProgressBar
-          completed={Math.round((section / (siteSections.length - 1)) * 100)}
+          completed={Math.round((sectionIndex / (allSectionLength - 1)) * 100)}
         />
       ) : (
         <></>
       )}
-      <Header text={siteSections[section].header} />
-      {section === 0 && <Start />}
-      {section === 1 && (
+      <Header text={currentSection.header} />
+      {sectionIndex === 0 && <Start />}
+      {sectionIndex === 1 && (
+        <Dropdown
+          state={state}
+          setState={setState}
+          options={elementOptions}
+          propToChange={currentSection.property}
+        />
+      )}
+      {sectionIndex === 2 && element === 'air' && (
         <RadioButton
           state={state}
           setState={setState}
-          options={petOptions}
-          propToChange={siteSections[section].property}
+          options={petAirOptions}
+          propToChange={currentSection.property}
         />
       )}
-      {section === 2 && (
+      {sectionIndex === 2 && element === 'water' && (
+        <RadioButton
+          state={state}
+          setState={setState}
+          options={petWaterOptions}
+          propToChange={currentSection.property}
+        />
+      )}
+      {sectionIndex === 2 && element === 'earth' && (
+        <RadioButton
+          state={state}
+          setState={setState}
+          options={petLandOptions}
+          propToChange={currentSection.property}
+        />
+      )}
+      {sectionIndex === 3 && (
         <Input
           state={state}
           setState={setState}
-          propToChange={siteSections[section].property}
-          section={section}
-          setSection={setSection}
+          propToChange={currentSection.property}
+          sectionIndex={sectionIndex}
+          setSectionIndex={setSectionIndex}
           validate={inputValidation}
         />
       )}
-      {section === 3 && (
+      {sectionIndex === 4 && (
         <Range
           state={state}
           setState={setState}
           min={3}
           max={20}
-          propToChange={siteSections[section].property}
+          propToChange={currentSection.property}
         />
       )}
-      {section === 4 && (
+      {sectionIndex === 5 && (
         <RadioButton
           state={state}
           setState={setState}
           options={programmingOptions}
-          propToChange={siteSections[section].property}
+          propToChange={currentSection.property}
         />
       )}
-      {section === 5 && (
+      {sectionIndex === 6 && (
         <Input
           state={state}
           setState={setState}
-          propToChange={siteSections[section].property}
-          section={section}
-          setSection={setSection}
+          propToChange={currentSection.property}
+          sectionIndex={sectionIndex}
+          setSectionIndex={setSectionIndex}
           validate={inputValidation}
         />
       )}
-      {section === 6 && (
+      {sectionIndex === 7 && (
         <Dropdown
           state={state}
           setState={setState}
           options={pronounOptions}
-          propToChange={siteSections[section].property}
+          propToChange={currentSection.property}
         />
       )}
-      {section === 7 && <Story state={state} />}
+      {sectionIndex === 8 && <Story state={state} />}
       <Buttons
-        section={section}
-        setSection={setSection}
+        sectionIndex={sectionIndex}
+        setSectionIndex={setSectionIndex}
         state={state}
         setState={setState}
+        sectionLength={allSectionLength}
+        currentSection={currentSection}
       />
       <Error error={state.error} />
-      {section === 0 && <Footer />}
+      {sectionIndex === 0 && <Footer />}
     </div>
   );
 };
