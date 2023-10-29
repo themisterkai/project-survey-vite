@@ -4,15 +4,15 @@ export const Input = ({
   state,
   setState,
   propToChange,
-  section,
-  setSection,
+  sectionIndex,
+  setSectionIndex,
   validate,
   maxLength = 15,
 }) => {
   const handleKeyUp = e => {
     validate(e.target.value);
     if (e.key === 'Enter' && state.error === '' && state[propToChange] !== '') {
-      setSection(section + 1);
+      setSectionIndex(sectionIndex + 1);
     }
   };
   return (
@@ -37,8 +37,8 @@ Input.propTypes = {
   state: PropTypes.object.isRequired,
   setState: PropTypes.func.isRequired,
   propToChange: PropTypes.string.isRequired,
-  section: PropTypes.number.isRequired,
-  setSection: PropTypes.func.isRequired,
+  sectionIndex: PropTypes.number.isRequired,
+  setSectionIndex: PropTypes.func.isRequired,
   validate: PropTypes.func.isRequired,
   maxLength: PropTypes.number,
 };

@@ -1,39 +1,49 @@
-export const siteSections = [
-  {
-    header: 'Welcome!',
-    property: '',
-  },
-  {
-    header: 'Choose an animal',
-    property: 'pet',
-  },
-  {
-    header: 'Pick a name for your pet!',
-    property: 'petName',
-  },
-  {
-    header: 'Choose a number',
-    property: 'kitties',
-  },
-  {
-    header: 'Pick something to learn:',
-    property: 'programmingLanguage',
-  },
-  {
-    header: `What's your name?`,
-    property: 'name',
-  },
-  {
-    header: `What are your pronouns?`,
-    property: 'pronoun',
-  },
-  {
-    header: '',
-    property: '',
-  },
-];
+export const chooseSiteSections = (index, state) => {
+  const siteSections = [
+    {
+      header: 'Welcome!',
+      property: '',
+    },
+    {
+      header: 'Choose an element',
+      property: 'element',
+    },
+    {
+      header: `Choose ${state.element === 'air' ? 'an' : 'a'} ${
+        state.element === 'earth' ? 'land' : state.element
+      } animal`,
+      property: 'pet',
+    },
+    {
+      header: `Pick a name for your ${state.pet}!`,
+      property: 'petName',
+    },
+    {
+      header: 'Choose a number',
+      property: 'kitties',
+    },
+    {
+      header: 'Pick something to learn:',
+      property: 'programmingLanguage',
+    },
+    {
+      header: `What's your name?`,
+      property: 'name',
+    },
+    {
+      header: `What are your pronouns?`,
+      property: 'pronoun',
+    },
+    {
+      header: '',
+      property: '',
+    },
+  ];
+  return index == null ? siteSections : siteSections[index];
+};
 
 export const initialState = {
+  element: '',
   pet: '',
   petName: '',
   kitties: 3,
@@ -62,22 +72,67 @@ export const pronounOptions = [
   },
 ];
 
-export const petOptions = [
+export const elementOptions = [
   {
-    value: 'dog',
-    label: 'dog 🐕',
+    value: '',
+    label: 'Select one:',
   },
   {
+    value: 'air',
+    label: 'air',
+  },
+  {
+    value: 'water',
+    label: 'water',
+  },
+  {
+    value: 'earth',
+    label: 'earth',
+  },
+];
+
+export const petWaterOptions = [
+  {
+    value: 'shark',
+    label: 'shark',
+  },
+  {
+    value: 'goldfish',
+    label: 'goldfish',
+  },
+  {
+    value: 'flounder',
+    label: 'flounder',
+  },
+];
+
+export const petLandOptions = [
+  {
     value: 'beaver',
-    label: 'beaver 🦫',
+    label: 'beaver',
   },
   {
     value: 'squirrel',
-    label: 'squirrel 🐿️',
+    label: 'squirrel',
   },
   {
     value: 'raccoon',
-    label: 'raccoon 🦝',
+    label: 'raccoon',
+  },
+];
+
+export const petAirOptions = [
+  {
+    value: 'eagle',
+    label: 'eagle',
+  },
+  {
+    value: 'owl',
+    label: 'owl',
+  },
+  {
+    value: 'flamingo',
+    label: 'flamingo',
   },
 ];
 
@@ -164,6 +219,7 @@ export const getTitle = ({ pet, pronoun }) => {
 };
 
 export const generateStory = ({
+  element,
   pet,
   petName,
   kitties,
@@ -174,6 +230,21 @@ export const generateStory = ({
   const numOfKitties = numberToWords[kitties];
   name = capitalize(name.toLowerCase().trimEnd());
   petName = capitalize(petName.toLowerCase().trimEnd());
+  let petType = 'fur';
+  let disasterType = 'ancient trees started dying.';
+  let solution = 'take better care of trees and manage the earth';
+  let solution2 = 'the trees started growing again';
+  if (element === 'air') {
+    petType = 'feathers';
+    disasterType = 'clean air became polluted.';
+    solution = 'remove pollutants and manage the air';
+    solution2 = 'the air started becoming clear again';
+  } else if (element === 'water') {
+    petType = 'scales';
+    disasterType = 'ancient well had dried up.';
+    solution = 'track rainfall, predict the weather, and manage the water';
+    solution2 = 'that well started filling up again';
+  }
 
   return [
     `Once upon a time, there lived a <span className="story-highlight">${getPronoun(
@@ -184,8 +255,8 @@ export const generateStory = ({
       'he',
       pronoun
     )}</span> had a <span className="story-highlight">${pet}</span> named 
-    <span className="story-highlight">${petName}</span> whose fur was as dark
-    as a starless night.
+    <span className="story-highlight">${petName}</span> whose <span className="story-highlight">
+    ${petType}</span> glistened like a bright starry night.
     <p/>
     <span className="story-highlight">${name}</span> and <span className="story-highlight">
     ${petName}</span>, they were a team, always together, always looking for the next
@@ -206,14 +277,16 @@ export const generateStory = ({
     Coding Great Again™. And with  <span className="story-highlight">${numOfKitties}
     </span> kitties behind them, they were an unstoppable force.`,
 
-    `<span className="story-highlight">${name}</span> found this old book about 
-    <span className="story-highlight">${programmingLanguage}</span>, in 
+    `${element === 'air' ? 'An' : 'A'} <span className="story-highlight">${
+      element === 'earth' ? 'forest' : element
+    }</span>-fairy appeared before
+    <span className="story-highlight">${name}</span> and gave
     <span className="story-highlight">${getPronoun(
-      'his',
+      'him',
       pronoun
-    )}</span> grandfather's attic. They started small, making 
-    <span className="story-highlight">${petName}</span>'s virtual mouse run around
-    on the screen.
+    )}</span> a book about <span className="story-highlight">${programmingLanguage}</span>.  
+    They started small, making <span className="story-highlight">${petName}</span>'s
+    virtual mouse run around on the screen.
     <p/>
     As time went on, they got better and better. They built games. They made amazing
     puzzles. And those <span className="story-highlight">${numOfKitties}</span> kitties?
@@ -225,16 +298,16 @@ export const generateStory = ({
     <span className="story-highlight">${numOfKitties}</span>
     incredible kitties, and the amazing things they were doing with coding.
     <p/>
-    Then, one cold night, a problem came up. The village's ancient well 
-    had dried up. People were worried. But <span className="story-highlight">${name}</span>,
+    Then, one cold night, a problem came up. The village's <span className="story-highlight">
+    ${disasterType}</span> People were worried. But <span className="story-highlight">${name}</span>,
     <span className="story-highlight">${petName}</span>, and their
     <span className="story-highlight">${numOfKitties}</span>
     kitties saw this as a chance to use their skills.`,
 
     `Together, they coded a system using <span className="story-highlight">
-    ${programmingLanguage}</span> that could track rainfall, predict the weather,
-    and manage the water like you wouldn't believe. The  villagers watched, amazed,
-    as that well started filling up again.
+    ${programmingLanguage}</span> that could <span className="story-highlight">${solution}</span>
+    like you wouldn't believe. The  villagers watched, amazed, as
+    <span className="story-highlight">${solution2}</span>.
     <p/>
     <span className="story-highlight">${name}</span>,
     <span className="story-highlight">${petName}</span>, and their army of
